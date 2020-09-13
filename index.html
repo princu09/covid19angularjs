@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Covid 19 Angular</title>
+    <link rel="shortcut icon" href="https://princu09.github.io/nfwebbuilder/img/logo.png" type="image/png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="js/myScript.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="MyCtrl">
+
+    <div class="container mb-0 text-center">
+        <img src="img/logo.jpg" width="300rem" alt="">
+    </div>
+
+    <div class="container text-center mt-0 jumbotron bg-white">
+        <h1 class="display-md-4 mt-0" id="font-weight-600">Covid 19 Live Case Details</h1>
+        <hr class="my-4">
+        <div class="container-fluid text-center row">
+
+            <div class="col-md-4 my-2 text-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body mx-4 bg-success" id="border-radius">
+                        <h5 class="card-title" id="font-weight-600">Confirmed Cases</h5>
+                        <h3 id="font-weight-600">{{all_data.confirmed.value}}</h3>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-2 text-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body mx-4 bg-primary" id="border-radius">
+                        <h5 class="card-title" id="font-weight-600">Recovered Cases</h5>
+                        <h3 id="font-weight-600">{{all_data.recovered.value}}</h3>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-2 text-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body mx-4 bg-danger" id="border-radius">
+                        <h5 class="card-title" id="font-weight-600">Death Cases</h5>
+                        <h3 id="font-weight-600">{{all_data.deaths.value}}</h3>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Enter Country Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="c" ng-change="get_c_data()">
+                <small id="emailHelp" class="form-text text-muted">When You Enter Contry Name then we will diplay you all COVID-19 Cases.</small>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- // Get Country Data -->
+
+    <div class="container" ng-if="c_data">
+        <h1 class="display-md-4 mt-0" id="font-weight-600"><span class="text-uppercase">{{c}}</span> All Covid-19 Case Information</h1>
+        <hr class="my-4">
+        <div class="container-fluid text-center row">
+
+            <div class="col-md-4 my-2 text-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body mx-4 bg-success" id="border-radius">
+                        <h5 class="card-title" id="font-weight-600">Confirmed Cases</h5>
+                        <h3 id="font-weight-600">{{c_data.confirmed.value}}</h3>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-2 text-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body mx-4 bg-primary" id="border-radius">
+                        <h5 class="card-title" id="font-weight-600">Recovered Cases</h5>
+                        <h3 id="font-weight-600">{{c_data.recovered.value}}</h3>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 my-2 text-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body mx-4 bg-danger" id="border-radius">
+                        <h5 class="card-title" id="font-weight-600">Death Cases</h5>
+                        <h3 id="font-weight-600">{{c_data.deaths.value}}</h3>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container text-center my-5">
+        <h4 id="footer">
+            <script type="text/javascript">
+                var year = new Date();
+                document.write(year.getFullYear());
+            </script> &copy; NorthFoxGroup</h4>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>
